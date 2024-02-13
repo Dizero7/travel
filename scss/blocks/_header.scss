@@ -1,0 +1,10 @@
+.header{
+	background-color: $primary;
+	&__nav{
+		display: flex;
+		justify-content: space-between;
+	}
+	&__logo img{
+		max-width: 180px;
+	}
+}
