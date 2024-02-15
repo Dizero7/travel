@@ -1,3 +1,63 @@
-.footer{
+.footer {
 	background-color: $footer;
+	padding: 5rem 0 3rem;
+	&__upper {
+		display: flex;
+		justify-content: space-between;
+		gap: 5rem;
+		margin-bottom: 7rem;
+	}
+
+	&_bottom {
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 2rem;
+	}
+
+	&__grid-col {
+	}
+
+	&__grid-title {
+		color: $title;
+		margin-bottom: 1.5rem;
+	}
+
+	&__grid-links {
+		display: grid;
+		row-gap: .75rem;
+		& li a {
+		text-decoration: none;
+		color: $text-light;
+		}
+	}
+
+	&__copyright {
+		color: $text-light;
+	}
+
+	&__media-links {
+		display: flex;
+		gap: 1.5rem;
+		& i {
+			color: $text-light;
+			font-size: 1.5rem;
+		}
+	}
+}
+
+.branding {
+
+	&__logo img{
+		max-width: 70px;
+	}
+
+	&__title {
+		color: $text-light;
+		margin-top: 1.5rem;
+	}
 }
