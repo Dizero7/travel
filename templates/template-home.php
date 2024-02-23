@@ -5,21 +5,26 @@ Template Name: Landing
 get_header(); 
 ?>
 <main class="main">
-	<section class="hero" style="background: url('<?php $hero_bg = get_field('hero_background'); echo esc_url($hero_bg['url']); ?>');">
+	<section class="hero" style="background:
+	url('<?php $hero_bg = get_field('hero_background'); echo esc_url($hero_bg['url']); ?>')
+	no-repeat center;
+	height: 750px">
+		<div class="hero__shadow">
+		</div>
 		<div class="container">
 			<div class="hero__main">
-				<h2>
-					<?php echo esc_html( get_field('hero_subheading') ); ?>
-				</h2>
-				<h1>
-					<?php echo wp_kses_post ( get_field('hero_heading') ); ?>
+				<h1 class="hero__subheading">
+					<?= esc_html( get_field('hero_subheading') ); ?>
 				</h1>
-				<a href="<?php
-				$hero_link = get_field('hero_link');
-				esc_url($hero_link['url'])
-				?>" class="button"><?php
-				echo esc_html($hero_link['title'])
-				?></a>
+				<h2 class="hero__heading">
+					<?= wp_kses_post ( get_field('hero_heading') ); ?>
+				</h2>
+				<p class="hero__text">
+					<?= esc_html( get_field('hero_text') ); ?>
+				</p>
+				<a href="<?php $hero_link = get_field('hero_link');
+				esc_url($hero_link['url']) ?>" class="button">
+				<?= esc_html($hero_link['title']) ?> <i class="ri-arrow-right-line"></i></a>
 			</div>
 			<div class="hero__locations">
 				<?php
@@ -43,16 +48,25 @@ get_header();
 	</section>
 	<section class="about" id="about">
 		<div class="container">
-			<h2 class="about__heading">
-				<?= wp_kses_post ( get_field('about_heading') ); ?>
-			</h2>
-			<p class="about__text">
-				<?= esc_html ( get_field('about_text') ); ?>
-			</p>
-			<a href="<?php
-				$about_link = get_field('about_link');
-				esc_url($about_link['url']) ?>" class="button"><?= esc_html($about_link['title']) ?>
-			</a>
+			<div class="about__wrap">
+				<div class="about__content">
+					<h2 class="about__heading">
+						<?= wp_kses_post ( get_field('about_heading') ); ?>
+					</h2>
+					<p class="about__text">
+						<?= esc_html ( get_field('about_text') ); ?>
+					</p>
+					<a href="<?php
+						$about_link = get_field('about_link');
+						esc_url($about_link['url']) ?>" class="button"><?= esc_html($about_link['title']) ?>
+						<i class="ri-arrow-right-line"></i>
+					</a>
+				</div>
+				<div class="about__image-wrap">
+					<img class="about__image" src="<?php $about_img = get_field('about_image'); echo esc_url($about_img['url']); ?>"/>
+					<div class="about__shadow"></div>
+				</div>
+			</div>
 		</div>
 	</section>
 	<section class="beauty" id="popular">
@@ -74,7 +88,9 @@ get_header();
 				$place_img = get_field('place_image', $place->ID);
 				?>
 				<a href="<?= esc_url($place_link['url']); ?>" class="beauty__place">
-					<img src="<?= esc_url($place_img['url']); ?>" alt="" class="place__image"/>
+					<div class="place__image-wrap">
+						<img src="<?= esc_url($place_img['url']); ?>" alt="" class="place__image"/>
+					</div>
 					<h3 class="place__name"><?= esc_html(get_field('place_name', $place->ID));?></h3>
 					<h3 class="place__location"><?= esc_html(get_field('place_location', $place->ID));?></h3>
 				</a>
@@ -82,30 +98,29 @@ get_header();
 			</div>
 		</div>
 	</section>
-	<section class="explore">
+	<section class="explore" id="explore">
 		<div class="container" style="background: url('<?php $explore_bg = get_field('explore_background'); echo esc_url($explore_bg['url']); ?>')">
 			<div class="explore__wrap">
 				<div class="explore__content">
 					<h2 class="explore__heading">
 						<?php echo wp_kses_post ( get_field('explore_heading') ); ?>
 					</h2>
-					<p class="exlore__text">
+					<p class="explore__text">
 						<?php echo esc_html ( get_field('explore_text') ); ?>
 					</p>
 				</div>
 				<div class="explore__author">
-					<img src="<?php $explore_author_img = get_field('explore_author_image'); echo esc_url($explore_author_img['url']); ?>
+					<img class="explore__author-img" src="<?php $explore_author_img = get_field('explore_author_image'); echo esc_url($explore_author_img['url']); ?>
 					" alt=""/>
-					<p><?php echo esc_html ( get_field('explore_author_name') ); ?></p>
+					<p class="explore__author-text"><?php echo esc_html ( get_field('explore_author_name') ); ?></p>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section class="subscribe">
+	<section class="subscribe" id="subscribe">
 		<div class="container">
 			<div class="subscribe__wrap">
-			<img src="<?php $subscribe_img = get_field('subscribe_image'); echo esc_url($subscribe_img['url']); ?>" alt="" class="subscribe__image">
-			</div>
+			<img src="<?php $subscribe_img = get_field('subscribe_image'); echo esc_url($subscribe_img['url']); ?>" alt="" class="subscribe__image"/>
 			<div class="subscribe__form">
 				<h2 class="subscribe__heading">
 					<?php echo wp_kses_post ( get_field('subscribe_heading') ); ?>
@@ -114,6 +129,7 @@ get_header();
 					<?php echo esc_html ( get_field('subscribe_text') ); ?>
 				</div>
 				<?= do_shortcode('[contact-form-7 id="d0281e9" title="Contact form 1"]')?>
+			</div>
 			</div>
 		</div>
 	</section>

@@ -1,0 +1,36 @@
+.about {
+
+	&__content {
+		text-align: center;
+	}
+
+	&__wrap{
+		display: grid;
+		gap: 8rem;
+		grid-template-columns: 400px 460px;
+	}
+
+	&__heading {
+	}
+
+	&__text {
+		margin-bottom: 3rem;
+	}
+
+	&__image-wrap {
+		position: relative;
+		overflow: hidden;
+		max-width: 460px;
+		justify-content: flex-end;
+		align-self: flex-end;
+	}
+
+	&__image {
+		
+	}
+
+	&__shadow {
+		@include shadow;
+
+	}
+}

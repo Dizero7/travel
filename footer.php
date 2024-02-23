@@ -3,7 +3,7 @@
 		<div class="footer__upper">
 			<div class="branding">
 				<a href="" class="branding__logo"><img src="<?php echo esc_url(get_template_directory_uri() . '/img/logo.png'); ?>" alt="" /></a>
-				<h2 class="branding__title">Travel with us and explore the world without limits.</h2>
+				<h3 class="branding__title">Travel with us and explore the world without limits.</h3>
 			</div>
 			<div class="footer__grid">
 				<div class="footer__grid-col">
@@ -45,9 +45,9 @@
 			</div>
 		</div>
 		<div class="footer_bottom">
-			<h2 class="footer__copyright">
+			<h3 class="footer__copyright">
 				© Copyright. All rights reserved.
-			</h2>
+			</h3>
 			<div class="footer__media-links">
 				<a href="https://www.facebook.com/"><i class="ri-facebook-line"></i></a>
 				<a href="https://www.instagram.com/"><i class="ri-instagram-line"></i></a>

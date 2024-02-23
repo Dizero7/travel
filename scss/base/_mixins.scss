@@ -8,3 +8,11 @@
     @content;
   }
 }
+@mixin shadow{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: linear-gradient(180deg, 
+	hsla(0, 0%, 0%, 0) 50%,
+	hsl(0, 0%, 0%) 125%);
+}

@@ -3,17 +3,44 @@ body{
 	font-family: $font-primary;
 	color: $text;
 	background-color: $primary;
+	overflow-x: hidden;
 }
 h1,h2,h3,h4,h5,h6{
 	font-family: $font-secondary;
 	font-weight: 600;
 	color: $title;
 }
+h2{
+	font-size: 2.5rem;
+}
+h3{
+	font-size: 1.25rem;
+}
+.button{
+	background-color: hsla(0, 0%, 100%, 0.2);
+	padding: 1.25rem 1.5rem;
+	color: $title;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-family: $font-secondary;
+	font-weight: 600;
+	backdrop-filter: blur(2px);
+	& i{
+		font-size: 1.25rem;
+		transition: transform 0.4s;
+		font-weight: initial;
+	}
+	&:hover i{
+		transform: translateX(0.25rem);
+	}
+
+}
 .container {
-  padding: 0 30px;
+  padding: 5rem 1rem;
   max-width: 1180px;
   margin: 0 auto;
 	@include mediaMobile {
-		padding: 0 10px;
+		padding: 5rem 0.5rem;
 	}
 }

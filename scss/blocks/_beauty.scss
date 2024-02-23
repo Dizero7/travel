@@ -4,16 +4,26 @@
 	}
 
 	&__locations {
-		display: flex;
+		display: grid;
+		gap: 3rem;
+		grid-template-columns: repeat(3, 1fr);
+		padding-top: 4rem;
 	}
 
 	&__place {
+		&:hover .place__image{
+			transform: scale(1.1);
+		}
 	}
 }
 
 .place {
 
 	&__image {
+		transition: transform .4s;
+	}
+	&__image-wrap {
+		overflow: hidden;
 	}
 
 	&__name {
@@ -21,4 +31,6 @@
 
 	&__location {
 	}
+	
+	
 }

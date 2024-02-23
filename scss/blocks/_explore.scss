@@ -1,0 +1,35 @@
+.explore {
+
+	&__wrap {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__content {
+		display: grid;
+		grid-template-columns: 670px 1fr;
+		padding-top: 700px;
+	}
+
+	&__heading {
+	}
+
+	&__author {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+		&-img {
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+		}
+		&-text{
+			font-size: 0.875rem;
+			color: $title;
+		}
+	}
+
+	&__text {
+	}
+}
