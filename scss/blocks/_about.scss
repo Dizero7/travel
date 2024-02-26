@@ -1,16 +1,23 @@
 .about {
 
 	&__content {
-		text-align: center;
+		@include mediaTablet{
+			text-align: center;
+		}
+		
 	}
 
 	&__wrap{
 		display: grid;
 		gap: 8rem;
-		grid-template-columns: 400px 460px;
+		grid-template-columns: repeat(2, 1fr);
+		@include mediaTablet{
+			grid-template-columns: repeat(1, 1fr);
+		}
 	}
 
 	&__heading {
+		margin-bottom: 1.5rem;
 	}
 
 	&__text {

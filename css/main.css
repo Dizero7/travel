@@ -44,6 +44,7 @@ img {
 
 img,
 svg {
+  display: block;
   max-width: 100%;
   height: auto;
 }
@@ -138,30 +139,111 @@ h3 {
 }
 
 .container {
-  padding: 5rem 1rem;
+  padding: 4rem 1rem;
   max-width: 1180px;
   margin: 0 auto;
 }
+.container-header {
+  padding: 0;
+}
 @media screen and (max-width: 575px) {
   .container {
-    padding: 5rem 0.5rem;
+    padding: 3rem 0.5rem;
   }
 }
 
-.header__nav {
-  display: flex;
-  justify-content: space-between;
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: transparent;
+  z-index: 4;
+}
+@media screen and (max-width: 767px) {
+  .header {
+    width: 100%;
+  }
 }
 .header__logo img {
   max-width: 70px;
 }
-.header__links {
+.header__nav {
+  height: 3.5rem;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 767px) {
+  .header__nav {
+    margin-inline: 1.5rem;
+  }
+}
+.header__toggle {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .header__toggle {
+    display: flex;
+    font-size: 1.25rem;
+    color: #F2F2F2;
+    cursor: pointer;
+  }
+}
+.header__close {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .header__close {
+    display: flex;
+    font-size: 1.25rem;
+    color: #F2F2F2;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header__wrap {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    background-color: hsla(0, 0%, 0%, 0.3);
+    width: 100%;
+    padding-block: 4rem;
+    transition: top 0.4s;
+    backdrop-filter: blur(24px);
+  }
+}
+.header__wrap.open {
+  top: 0;
+}
+.header__links {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
   gap: 4rem;
 }
-.header__links li a {
-  color: #B3B3B3;
+@media screen and (max-width: 767px) {
+  .header__links {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+}
+.header__links a {
+  color: #F2F2F2;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
+}
+
+.header-scroll:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 0%, 0.3);
+  backdrop-filter: blur(24px);
+  z-index: -1;
 }
 
 .footer {
@@ -219,14 +301,18 @@ h3 {
   position: relative;
 }
 .hero__shadow {
-  display: none;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   background: linear-gradient(180deg, hsla(0, 0%, 0%, 0) 58%, hsl(0, 0%, 0%) 78%);
-  height: 800px;
+  height: 150px;
   width: 100%;
   z-index: 1;
+}
+@media screen and (max-width: 767px) {
+  .hero__main {
+    text-align: center;
+  }
 }
 .hero__subheading {
   margin-bottom: 0.5rem;
@@ -240,6 +326,11 @@ h3 {
   color: #F2F2F2;
   max-width: 550px;
 }
+@media screen and (max-width: 767px) {
+  .hero__text {
+    margin-inline: auto;
+  }
+}
 .hero__locations {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -247,9 +338,15 @@ h3 {
   gap: 1.5rem;
   padding-top: 3rem;
 }
+@media screen and (max-width: 767px) {
+  .hero__locations {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
 .hero__location {
   position: relative;
   overflow: hidden;
+  z-index: 2;
 }
 .hero__location:hover .location__image {
   transform: scale(1.1);
@@ -262,25 +359,35 @@ h3 {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
-  z-index: 1;
+  z-index: 3;
   font-size: 1.25rem;
 }
 .location__shadow {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   background: linear-gradient(180deg, hsla(0, 0%, 0%, 0) 50%, hsl(0, 0%, 0%) 125%);
   width: 100%;
   height: 100%;
 }
 
-.about__content {
-  text-align: center;
+@media screen and (max-width: 767px) {
+  .about__content {
+    text-align: center;
+  }
 }
 .about__wrap {
   display: grid;
   gap: 8rem;
-  grid-template-columns: 400px 460px;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media screen and (max-width: 767px) {
+  .about__wrap {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.about__heading {
+  margin-bottom: 1.5rem;
 }
 .about__text {
   margin-bottom: 3rem;
@@ -294,7 +401,7 @@ h3 {
 }
 .about__shadow {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   background: linear-gradient(180deg, hsla(0, 0%, 0%, 0) 50%, hsl(0, 0%, 0%) 125%);
 }

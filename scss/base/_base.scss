@@ -37,10 +37,13 @@ h3{
 
 }
 .container {
-  padding: 5rem 1rem;
+  padding: 4rem 1rem;
   max-width: 1180px;
   margin: 0 auto;
+	&-header{
+		padding: 0;
+	}
 	@include mediaMobile {
-		padding: 5rem 0.5rem;
+		padding: 3rem 0.5rem;
 	}
 }

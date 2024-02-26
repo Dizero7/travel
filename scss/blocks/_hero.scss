@@ -1,18 +1,20 @@
 .hero {
 	position: relative;
 	&__shadow{
-		display: none;
 		position: absolute;
-		top: 0;
+		bottom: 0;
 		left: 0;
 		background: linear-gradient(180deg, 
 		hsla(0, 0%, 0%, 0) 58%,
 		hsl(0, 0%, 0%) 78%);
-		height: 800px;
+		height: 150px;
 		width: 100%;
 		z-index: 1;
 	}
 	&__main {
+		@include mediaTablet{
+			text-align: center;
+		}
 		
 	}
 	&__subheading{
@@ -26,6 +28,9 @@
 		margin-bottom: 2rem;
 		color: $title;
 		max-width: 550px;
+		@include mediaTablet{
+			margin-inline: auto;
+		}
 	}
 
 	&__locations {
@@ -34,11 +39,15 @@
 		place-content: center;
 		gap: 1.5rem;
 		padding-top: 3rem;
+		@include mediaTablet{
+			grid-template-columns: repeat(2, 200px);
+		}
 	}
 
 	&__location {
 		position: relative;
 		overflow: hidden;
+		z-index: 2;
 		&:hover .location__image{
 			transform: scale(1.1);
 		}
@@ -53,7 +62,7 @@
 		position: absolute;
 		bottom: 1rem;
 		left: 1rem;
-		z-index: 1;
+		z-index: 3;
 		font-size: 1.25rem;
 	}
 

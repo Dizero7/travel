@@ -7,8 +7,7 @@ get_header();
 <main class="main">
 	<section class="hero" style="background:
 	url('<?php $hero_bg = get_field('hero_background'); echo esc_url($hero_bg['url']); ?>')
-	no-repeat center;
-	height: 750px">
+	no-repeat center;">
 		<div class="hero__shadow">
 		</div>
 		<div class="container">
