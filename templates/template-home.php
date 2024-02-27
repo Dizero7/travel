@@ -89,18 +89,26 @@ get_header();
 				<a href="<?= esc_url($place_link['url']); ?>" class="beauty__place">
 					<div class="place__image-wrap">
 						<img src="<?= esc_url($place_img['url']); ?>" alt="" class="place__image"/>
+						<div class="place__shadow"></div>
 					</div>
 					<h3 class="place__name"><?= esc_html(get_field('place_name', $place->ID));?></h3>
-					<h3 class="place__location"><?= esc_html(get_field('place_location', $place->ID));?></h3>
+					<div class="place__location-wrap">
+						<i class="ri-map-pin-line"></i>
+						<h3 class="place__location"><?= esc_html(get_field('place_location', $place->ID));?></h3>
+					</div>		
 				</a>
 				<?php endforeach; ?>
 			</div>
 		</div>
 	</section>
 	<section class="explore" id="explore">
-		<div class="container" style="background: url('<?php $explore_bg = get_field('explore_background'); echo esc_url($explore_bg['url']); ?>')">
-			<div class="explore__wrap">
-				<div class="explore__content">
+		<div class="container-explore">
+			<div class="explore__image-wrap">
+				<img class="explore__image"src="<?php $explore_bg = get_field('explore_background'); echo esc_url($explore_bg['url']); ?>" alt=""/>
+				<div class="explore__image-shadow"></div>
+			</div>
+			<div class="explore__content container">
+				<div class="explore__wrap-content">
 					<h2 class="explore__heading">
 						<?php echo wp_kses_post ( get_field('explore_heading') ); ?>
 					</h2>
@@ -111,7 +119,7 @@ get_header();
 				<div class="explore__author">
 					<img class="explore__author-img" src="<?php $explore_author_img = get_field('explore_author_image'); echo esc_url($explore_author_img['url']); ?>
 					" alt=""/>
-					<p class="explore__author-text"><?php echo esc_html ( get_field('explore_author_name') ); ?></p>
+					<p class="explore__author-name"><?php echo esc_html ( get_field('explore_author_name') ); ?></p>
 				</div>
 			</div>
 		</div>
@@ -119,7 +127,10 @@ get_header();
 	<section class="subscribe" id="subscribe">
 		<div class="container">
 			<div class="subscribe__wrap">
-			<img src="<?php $subscribe_img = get_field('subscribe_image'); echo esc_url($subscribe_img['url']); ?>" alt="" class="subscribe__image"/>
+			<div class="subscribe__image-wrap">
+				<img src="<?php $subscribe_img = get_field('subscribe_image'); echo esc_url($subscribe_img['url']); ?>" alt="" class="subscribe__image"/>
+				<div class="subscribe__image-shadow"></div>
+			</div>
 			<div class="subscribe__form">
 				<h2 class="subscribe__heading">
 					<?php echo wp_kses_post ( get_field('subscribe_heading') ); ?>

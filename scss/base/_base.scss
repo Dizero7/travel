@@ -17,7 +17,7 @@ h3{
 	font-size: 1.25rem;
 }
 .button{
-	background-color: hsla(0, 0%, 100%, 0.2);
+	background-color: hsla(0, 0%, 100%, 0.2) !important;
 	padding: 1.25rem 1.5rem;
 	color: $title;
 	display: inline-flex;
@@ -34,12 +34,18 @@ h3{
 	&:hover i{
 		transform: translateX(0.25rem);
 	}
+	&:before{
+		content: url('../img/arrow-right-line.svg');
+		display: block;
+		width: 30px;
+		height: 30px;
+	}
 
 }
 .container {
-  padding: 4rem 1rem;
-  max-width: 1180px;
-  margin: 0 auto;
+  max-width: 1120px;
+	margin-inline: 1.5rem;
+	padding-block: 5rem 1rem;
 	&-header{
 		padding: 0;
 	}
