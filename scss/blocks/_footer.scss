@@ -1,22 +1,38 @@
 .footer {
 	background-color: $footer;
 	padding: 5rem 0 3rem;
+	@include mediaTablet{
+		padding: 1rem 0;
+	}
 	&__upper {
 		display: flex;
 		justify-content: space-between;
 		gap: 5rem;
 		margin-bottom: 7rem;
+		@include mediaTablet{
+			flex-direction: column;
+		}
 	}
 
 	&_bottom {
 		display: flex;
 		justify-content: space-between;
+		@include mediaTablet{
+			display: grid;
+			row-gap: 3rem;
+			align-content: center;
+			grid-template-columns: repeat(1, 1fr);
+		}
 	}
 	
 	&__grid {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 2rem;
+		@include mediaTablet{
+			grid-template-columns: repeat(2, 1fr);
+			text-align: center;
+		}
 	}
 
 	&__grid-col {
@@ -38,14 +54,28 @@
 
 	&__copyright {
 		color: $text-light;
+		@include mediaTablet{
+			margin: auto;
+			order: 1;
+		}
 	}
 
 	&__media-links {
 		display: flex;
 		gap: 1.5rem;
-		& i {
+		& a{
 			color: $text-light;
 			font-size: 1.5rem;
+			transition: 0.4s;
+			&:hover{
+				color: $title;
+				transform: translateY(-.25rem);
+			}
+		}
+		@include mediaTablet{
+			gap: 4rem;
+			margin: auto;
+			justify-content: space-around;
 		}
 	}
 }
@@ -54,10 +84,18 @@
 
 	&__logo img{
 		max-width: 70px;
+		@include mediaTablet{
+			margin: auto;
+		}
 	}
 
 	&__title {
 		color: $text-light;
 		margin-top: 1.5rem;
+	}
+	@include mediaTablet{
+		text-align: center;
+		max-width: 450px;
+		margin: auto;
 	}
 }

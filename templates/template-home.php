@@ -126,20 +126,20 @@ get_header();
 	</section>
 	<section class="subscribe" id="subscribe">
 		<div class="container">
-			<div class="subscribe__wrap">
-			<div class="subscribe__image-wrap">
-				<img src="<?php $subscribe_img = get_field('subscribe_image'); echo esc_url($subscribe_img['url']); ?>" alt="" class="subscribe__image"/>
-				<div class="subscribe__image-shadow"></div>
-			</div>
-			<div class="subscribe__form">
-				<h2 class="subscribe__heading">
-					<?php echo wp_kses_post ( get_field('subscribe_heading') ); ?>
-				</h2>
-				<div class="subscribe__text">
-					<?php echo esc_html ( get_field('subscribe_text') ); ?>
+			<div class="subscribe__content">
+				<div class="subscribe__image-wrap">
+					<img src="<?php $subscribe_img = get_field('subscribe_image'); echo esc_url($subscribe_img['url']); ?>" alt="" class="subscribe__image"/>
+					<div class="subscribe__image-shadow"></div>
 				</div>
-				<?= do_shortcode('[contact-form-7 id="d0281e9" title="Contact form 1"]')?>
-			</div>
+				<div class="subscribe__form">
+					<h2 class="subscribe__heading">
+						<?php echo wp_kses_post ( get_field('subscribe_heading') ); ?>
+					</h2>
+					<div class="subscribe__text">
+						<?php echo esc_html ( get_field('subscribe_text') ); ?>
+					</div>
+					<?= do_shortcode('[contact-form-7 id="d0281e9" title="Contact form 1"]')?>
+				</div>
 			</div>
 		</div>
 	</section>

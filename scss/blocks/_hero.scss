@@ -42,6 +42,9 @@
 		@include mediaTablet{
 			grid-template-columns: repeat(2, 200px);
 		}
+		@include mediaMobile{
+			grid-template-columns: repeat(1, 200px);
+		}
 	}
 
 	&__location {
