@@ -584,6 +584,18 @@ h3 {
 .beauty__place:hover .place__image {
   transform: scale(1.1);
 }
+.beauty__wrap-single {
+  margin: 3rem 0 1rem;
+  max-width: 200px;
+}
+.beauty-404 {
+  padding: 7rem 0;
+}
+.beauty-404 p {
+  max-width: 300px;
+  text-align: center;
+  margin-inline: auto;
+}
 
 .place__image-wrap {
   position: relative;

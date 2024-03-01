@@ -21,6 +21,21 @@
 			transform: scale(1.1);
 		}
 	}
+	
+	&__wrap-single{
+		margin: 3rem 0 1rem;
+		max-width: 200px;
+	}
+
+	&-404{
+		padding: 7rem 0;
+
+		& p{
+			max-width: 300px;
+			text-align: center;
+			margin-inline: auto;
+		}
+	}
 }
 
 .place {
