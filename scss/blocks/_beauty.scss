@@ -24,6 +24,7 @@
 }
 
 .place {
+
 	&__image-wrap {
 		position: relative;
 		overflow: hidden;
@@ -46,7 +47,7 @@
 
 	&__name {
 		font-size: 1.25rem;
-		margin-bottom: 0.5rem;
+		margin: 0.5rem 0;
 	}
 
 	&__location {
@@ -59,8 +60,5 @@
 		align-items: center;
 		column-gap: 0.25rem;
 		color: $text;
-
 	}
-	
-	
 }

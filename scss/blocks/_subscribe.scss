@@ -1,9 +1,9 @@
 .subscribe {
-
+	
 	&__content {
 		display: grid;
 		place-items: center;
-		padding: 0 1rem 2.5rem;
+		padding: 0 1rem 5rem;
 		grid-template-columns: repeat(2, 1fr);
 		@include mediaTablet {
 			gap: 3rem;
@@ -21,7 +21,10 @@
 	}
 
 	&__image {
-		width: 300px;
+		width: 350px;
+		@include mediaTablet{
+			width: 300px;
+		}
 	}
 
 	&__image-shadow {
@@ -37,7 +40,10 @@
 	}
 
 	&__form {
-		text-align: center;
+		text-align: left;
+		@include mediaTablet{
+			text-align: center;
+		}
 	}
 
 	&__heading {
@@ -46,6 +52,7 @@
 
 	&__text {
 		margin-bottom: 2rem;
+		max-width: 300px;
 	}
 	
 	&__input{

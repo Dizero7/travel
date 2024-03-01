@@ -6,18 +6,26 @@
 	@include mediaTablet{
 		width: 100%;
 	}
+	
 	&__logo img {
     max-width: 70px;
   }
+
 	&__nav{
 		height: 3.5rem;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		max-width: 1024px;
+		margin-inline: auto;
+		@media screen and (max-width: 1135px) {
+			margin-inline: 3rem;
+		}
 		@include mediaTablet{
 			margin-inline: 1.5rem;
 		}
 	}
+
 	&__toggle{
 		display: none;
 		@include mediaTablet{
@@ -27,6 +35,7 @@
 			cursor: pointer;
 		}
 	}
+
 	&__close{
 		display: none;
 		@include mediaTablet{
@@ -50,7 +59,6 @@
 			padding-block: 4rem;
 			transition: top 0.4s;
 			backdrop-filter: blur(24px);
-			
 		}
 		&.open{
 			top: 0;
@@ -65,12 +73,31 @@
 			flex-direction: column;
 			gap: 2.5rem;
 		}
+		
 		& a{
+			position: relative;
 			color: $title;
 			font-family: $font-secondary;
 			font-weight: 500;
+			&::after{
+			position: absolute;
+			content: '';
+			width: 0;
+			height: 2px;
+			background-color: $title;
+			left: 0;
+			bottom: -0.5rem;
+			transition: width 0.4s;
+			}
+
+			&:hover::after{
+				width: 70%;
+			}
 		}
 	}
+}
+.active-link::after{
+	width: 70% !important;
 }
 .header-scroll:after{
 	content: '';

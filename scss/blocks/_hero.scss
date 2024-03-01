@@ -1,5 +1,15 @@
-.hero {
+.hero{
 	position: relative;
+	
+	&__container{
+		max-width: 1120px;
+		margin-inline: auto;
+		padding: 7rem 3rem 2rem;
+		@include mediaMobile {
+			padding: 4rem 0.5rem;
+		}
+	}
+
 	&__shadow{
 		position: absolute;
 		bottom: 0;
@@ -11,24 +21,28 @@
 		width: 100%;
 		z-index: 1;
 	}
+
 	&__main {
 		@include mediaTablet{
 			text-align: center;
 		}
-		
 	}
+
 	&__subheading{
 		margin-bottom: 0.5rem;
 	}
+
 	&__heading{
 		font-size: 4rem;
 		margin-bottom: 1rem;
 	}
+	
 	&__text{
 		margin-bottom: 2rem;
 		color: $title;
 		max-width: 550px;
 		@include mediaTablet{
+			max-width: 400px;
 			margin-inline: auto;
 		}
 	}

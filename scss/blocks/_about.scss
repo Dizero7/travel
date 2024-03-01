@@ -1,13 +1,16 @@
 .about {
 
 	&__content {
-		text-align: center;
+		text-align: left;
+		@include mediaTablet{
+			text-align: center;
+		}
 	}
 
 	&__wrap{
 		display: grid;
 		place-items: center;
-		grid-template-columns: repeat(2, 350px);
+		grid-template-columns: repeat(2, 1fr);
 		row-gap: 3rem;
 		@include mediaTablet{
 			grid-template-columns: repeat(1, 1fr);
@@ -19,17 +22,28 @@
 	}
 
 	&__text {
-		margin-bottom: 3rem;
+		margin-bottom: 2rem;
+		@include mediaTablet{
+			max-width: 400px;
+			margin: 0 auto;
+			margin-bottom: 2rem;
+		}
 	}
 
 	&__image-wrap {
+		justify-self: flex-end;
 		position: relative;
 		overflow: hidden;
-		justify-self: center;
+		@include mediaTablet{
+			justify-self: center;
+		}
 	}
 
 	&__image {
-		width: 300px;
+		width: 350px;
+		@include mediaTablet{
+			width: 300px;
+		}
 	}
 
 	&__shadow {
