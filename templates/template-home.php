@@ -5,9 +5,8 @@ Template Name: Landing
 get_header(); 
 ?>
 <main class="main">
-	<section class="hero" id="home" style="background:
-	url('<?php $hero_bg = get_field('hero_background'); echo esc_url($hero_bg['url']); ?>')
-	no-repeat center;">
+	<section class="hero" id="home">
+		<img src="<?php $hero_bg = get_field('hero_background'); echo esc_url($hero_bg['url']); ?>" alt="" class="hero__bg">
 		<div class="hero__shadow">
 		</div>
 		<div class="hero__container">

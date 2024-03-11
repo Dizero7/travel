@@ -4,7 +4,9 @@ add_action('wp_enqueue_scripts', function () {
 	wp_enqueue_style('main-css', get_template_directory_uri() . '/css/main.css');
 	wp_enqueue_style('icon-library', 'https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css');
 	wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js');
+	wp_enqueue_script('scroll-reveal', get_template_directory_uri() . '/js/scrollreveal.min.js');
 });
+
 add_action('after_setup_theme', function () {
 	add_theme_support('menus');
 	register_nav_menus([
@@ -14,6 +16,6 @@ add_action('after_setup_theme', function () {
 		'footer-menu3' => 'Footer menu 3',
 		'footer-menu4' => 'Footer menu 4',
 	]);
-	
 });
+
 add_filter('show_admin_bar', '__return_false');

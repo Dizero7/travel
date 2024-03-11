@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		: header.classList.remove('header-scroll')
 	}
 	window.addEventListener('scroll', blurHeader)
+
 	//Active link
 	const sections = document.querySelectorAll('section[id]')
 
@@ -44,4 +45,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 	window.addEventListener('scroll', scrollActive)
+
+	//Scroll reveal
+	const scrollreveal = ScrollReveal({
+		origin: 'top',
+		distance: '30px',
+		duration: 3000,
+		delay: 100
+	})
+
+	scrollreveal.reveal(`.hero__main`)
+	scrollreveal.reveal(`.hero__location`, {delay:700, distance: '50px', interval: 100})
+	scrollreveal.reveal(`.about__content`, {origin: 'right'})
+	scrollreveal.reveal(`.about__image-wrap`, {origin: 'left'})
+	scrollreveal.reveal(`.beauty__place`, {interval: 200})
+	scrollreveal.reveal(`.explore__content`)
+	scrollreveal.reveal(`.subscribe__form`, {origin: 'left'})
+	scrollreveal.reveal(`.subscribe__image-wrap`, {origin: 'right'})
 })

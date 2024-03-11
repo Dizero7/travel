@@ -17,6 +17,10 @@
 			flex-direction: column;
 			margin-bottom: 5rem;
 		}
+		@include mediaTablet{
+			margin-bottom: 3rem;
+			gap: 3rem;
+		}
 		@include mediaMobile{
 			gap: 3rem;
 		}
@@ -25,6 +29,7 @@
 	&_bottom {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		@include mediaTablet{
 			display: grid;
 			row-gap: 3rem;
@@ -76,6 +81,7 @@
 
 	&__copyright {
 		color: $text-light;
+		font-size: 0.9rem;
 		@include mediaTablet{
 			margin: auto;
 			order: 1;
@@ -97,9 +103,12 @@
 			}
 		}
 		@include mediaTablet{
-			gap: 4rem;
+			gap: 3rem;
 			margin: auto;
 			justify-content: space-around;
+		}
+		@include mediaMobile{
+			gap: 2rem;
 		}
 	}
 }
